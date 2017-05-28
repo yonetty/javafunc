@@ -19,7 +19,7 @@ public class FunctionsTest extends Functions {
     public void test_zipWith() {
         List<String> l1 = Arrays.asList("a", "b", "c");
         List<Integer> l2 = Arrays.asList(new Integer(1), new Integer(2), new Integer(3));
-        BiFunction<String, Integer, String> f = FunctionsTest::repeat;
+        BiFunction<String, Integer, String> f = FunctionsTest::replicate;
         List<String> zipped = Functions._zipWith(f, l1, l2);
 
         assertNotNull(zipped);
@@ -29,7 +29,7 @@ public class FunctionsTest extends Functions {
         assertEquals("ccc", zipped.get(2));
     }
 
-    private static String repeat(String str, Integer n) {
+    private static String replicate(String str, Integer n) {
         return IntStream.range(0, n).mapToObj(i -> str).collect(Collectors.joining());
     }
 
@@ -37,7 +37,7 @@ public class FunctionsTest extends Functions {
     public void test_zipWith2() {
         List<String> l1 = Arrays.asList("a", "b", "c");
         List<Integer> l2 = Arrays.asList(new Integer(1), new Integer(2), new Integer(3), new Integer(4));
-        BiFunction<String, Integer, String> f = FunctionsTest::repeat;
+        BiFunction<String, Integer, String> f = FunctionsTest::replicate;
         List<String> zipped = Functions._zipWith(f, l1, l2);
 
         assertNotNull(zipped);
@@ -51,7 +51,7 @@ public class FunctionsTest extends Functions {
     public void test_zipWith3() {
         List<String> l1 = Arrays.asList("a", "b", "c", "d");
         List<Integer> l2 = Arrays.asList(new Integer(1), new Integer(2), new Integer(3));
-        BiFunction<String, Integer, String> f = FunctionsTest::repeat;
+        BiFunction<String, Integer, String> f = FunctionsTest::replicate;
         List<String> zipped = Functions._zipWith(f, l1, l2);
 
         assertNotNull(zipped);
@@ -65,7 +65,7 @@ public class FunctionsTest extends Functions {
     public void test_zipWith4() {
         List<String> l1 = Arrays.asList();
         List<Integer> l2 = Arrays.asList(new Integer(1), new Integer(2), new Integer(3));
-        BiFunction<String, Integer, String> f = FunctionsTest::repeat;
+        BiFunction<String, Integer, String> f = FunctionsTest::replicate;
         List<String> zipped = Functions._zipWith(f, l1, l2);
 
         assertNotNull(zipped);
@@ -75,7 +75,7 @@ public class FunctionsTest extends Functions {
     @Test
     public void test_zipWith5() {
         List<Integer> l2 = Arrays.asList(new Integer(1), new Integer(2), new Integer(3));
-        BiFunction<String, Integer, String> f = FunctionsTest::repeat;
+        BiFunction<String, Integer, String> f = FunctionsTest::replicate;
         List<String> zipped = Functions._zipWith(f, null, l2);
 
         assertNotNull(zipped);
@@ -86,7 +86,7 @@ public class FunctionsTest extends Functions {
     public void test_zipWith6() {
         List<String> l1 = Arrays.asList("a", "b", "c");
         List<Integer> l2 = Arrays.asList();
-        BiFunction<String, Integer, String> f = FunctionsTest::repeat;
+        BiFunction<String, Integer, String> f = FunctionsTest::replicate;
         List<String> zipped = Functions._zipWith(f, l1, l2);
 
         assertNotNull(zipped);
@@ -96,7 +96,7 @@ public class FunctionsTest extends Functions {
     @Test
     public void test_zipWith7() {
         List<String> l1 = Arrays.asList("a", "b", "c");
-        BiFunction<String, Integer, String> f = FunctionsTest::repeat;
+        BiFunction<String, Integer, String> f = FunctionsTest::replicate;
         List<String> zipped = Functions._zipWith(f, l1, null);
 
         assertNotNull(zipped);
@@ -107,7 +107,7 @@ public class FunctionsTest extends Functions {
     public void testZipWith() {
         List<String> l1 = Arrays.asList("a", "b", "c");
         List<Integer> l2 = Arrays.asList(new Integer(1), new Integer(2), new Integer(3));
-        BiFunction<String, Integer, String> f = FunctionsTest::repeat;
+        BiFunction<String, Integer, String> f = FunctionsTest::replicate;
         List<String> zipped = Functions.zipWith(f, l1, l2);
 
         assertNotNull(zipped);
